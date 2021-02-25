@@ -24,7 +24,7 @@ begin
 
   sprach_eintrag04('Read_beyond_end_of_stream',
                    'Read beyond end of stream',
-                   'Lesen ber das Dateiende hinaus..',
+                   'Lesen Ã¼ber das Dateiende hinaus..',
                    '',
                    '');
 
@@ -47,8 +47,8 @@ begin
                    '');
 
   sprach_eintrag04('Suche_Anfang',
-                   'ş searching start',
-                   'ş Suche Anfang',
+                   'â–  searching start',
+                   'â–  Suche Anfang',
                    '',
                    '');
 
@@ -66,13 +66,13 @@ begin
 
   sprach_eintrag04('EXE_Laenge',
                    ', EXE-size: $',
-                   ', EXE-L„nge: $',
+                   ', EXE-LÃ¤nge: $',
                    '',
                    '');
 
   sprach_eintrag04('dll_laenge',
                    ', size: $',
-                   ', L„nge: $',
+                   ', LÃ¤nge: $',
                    '',
                    '');
 
@@ -83,8 +83,8 @@ begin
                    '');
 
   sprach_eintrag04('Entpacke_Dateien',
-                   'ş unpacking files',
-                   'ş Entpacke Dateien',
+                   'â–  unpacking files',
+                   'â–  Entpacke Dateien',
                    '',
                    '');
 
@@ -96,13 +96,13 @@ begin
 
   sprach_eintrag04('Pruefsummenfehler',
                    'CRC error.',
-                   'Prfsummenfehler.',
+                   'PrÃ¼fsummenfehler.',
                    '',
                    '');
 
   sprach_eintrag04('Suche_Datei_mit_den_Installationsanweisungen',
-                   'ş looking for file with install instructions ..',
-                   'ş Suche Datei mit den Installationsanweisungen ..',
+                   'â–  looking for file with install instructions ..',
+                   'â–  Suche Datei mit den Installationsanweisungen ..',
                    '',
                    '');
 
@@ -113,8 +113,8 @@ begin
                    '');
 
   sprach_eintrag04('Erzeuge',
-                   'ş creating ',
-                   'ş Erzeuge ',
+                   'â–  creating ',
+                   'â–  Erzeuge ',
                    '',
                    '');
 
@@ -138,7 +138,7 @@ begin
 
   sprach_eintrag04('REM_Dateilaenge_wird_benutzt_bei',
                    'REM filesize is used at $',
-                   'REM Dateil„nge wird benutzt bei $',
+                   'REM DateilÃ¤nge wird benutzt bei $',
                    '',
                    '');
 
@@ -156,13 +156,13 @@ begin
 
   sprach_eintrag04('codeseg_laenge',
                    ', size of codesegment: $',
-                   ', L„nge des Programmbereiches: $',
+                   ', LÃ¤nge des Programmbereiches: $',
                    '',
                    '');
 
   sprach_eintrag04('lade_Datenbank_der_bekannten_Formate',
-                   'ş reading database of known formats',
-                   'ş lade Datenbank der bekannten Formate',
+                   'â–  reading database of known formats',
+                   'â–  lade Datenbank der bekannten Formate',
                    '',
                    '');
 
@@ -174,7 +174,7 @@ begin
 
   sprach_eintrag04('Formatdatenbank__kann_nicht_geoeffnet_werden_2',
                    '".',
-                   '" kann nicht ge”ffnet werden.',
+                   '" kann nicht geÃ¶ffnet werden.',
                    '',
                    '');
 
@@ -186,19 +186,19 @@ begin
 
   sprach_eintrag04('keine_Eintraege_in_e_wise_cfg_gefunden',
                    'No entrys in e_wise.cfg found.',
-                   'Keine Eintr„ge in e_wise.cfg gefunden.',
+                   'Keine EintrÃ¤ge in e_wise.cfg gefunden.',
                    '',
                    '');
 
   sprach_eintrag04('patchformat_vollstaendig',
                    'complete patch. removing header. ',
-                   'Vollst„ndige Datei. Entferene Vorspann. ',
+                   'VollstÃ¤ndige Datei. Entferene Vorspann. ',
                    '',
                    '');
 
   sprach_eintrag04('patchformat_unvollstaendig',
                    'Patchfile, only contains differences.',
-                   'Die Datei enth„lt nur die nderungen zwischen den Versionen.',
+                   'Die Datei enthÃ¤lt nur die Ã„nderungen zwischen den Versionen.',
                    '',
                    '');
 {

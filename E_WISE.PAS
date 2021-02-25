@@ -3,14 +3,14 @@ program E_WISE;
 
 (* 1999.12.18 Veit Kannegieser mit inflate-pascal.zip/DumPING als Grundlage *)
 (* 1999.12.19..2000.02.06 Erstversion aus e_lc10                            *)
-(* 2000.02.11 NE/$3e10 hinzugefÅgt                                          *)
-(* 2000.02.18 NE/$3bd0 und NE/$3c10 hinzugefÅgt                             *)
-(* 2000.02.28 UnterstÅtzung fÅr selbstauspackende Selbstauspacker ...       *)
+(* 2000.02.11 NE/$3e10 hinzugef√ºgt                                          *)
+(* 2000.02.18 NE/$3bd0 und NE/$3c10 hinzugef√ºgt                             *)
+(* 2000.02.28 Unterst√ºtzung f√ºr selbstauspackende Selbstauspacker ...       *)
 (*            Verbesserte Dateinamenerkennung                               *)
 (* 2000.03.01 Problem mit PE_0FEC:PE_6E00 behoben (Relokationen wurden      *)
 (*            nicht mitgerechnet)                                           *)
-(* 2000.08.21 NE/$3770 hinzugefÅgt,stOpen->stOpenRead                       *)
-(* 2000.10.12 Behandlung von Nullen in der letzten Datei geÑndert           *)
+(* 2000.08.21 NE/$3770 hinzugef√ºgt,stOpen->stOpenRead                       *)
+(* 2000.10.12 Behandlung von Nullen in der letzten Datei ge√§ndert           *)
 (* 2000.12.08 -                                                             *)
 (* 2001.05.21 PE/$6e00/$3cf4 -> ../$1528 und ../$1568                       *)
 (* 2002.02.11 NE/$84b0, Debugmodus                                          *)
@@ -60,7 +60,7 @@ type
       archivstart       :longint;
       laenge_eingepackt :longint;
       dateilaenge       :longint;
-      dateilaenge_2     :longint; (* zur Anzeige ?/in der öbersichttsdatei verwendet *)
+      dateilaenge_2     :longint; (* zur Anzeige ?/in der √úbersichttsdatei verwendet *)
       anfang            :array[0..400] of byte;
       dateiname         :string;
     end;
@@ -252,7 +252,7 @@ procedure springe_zu_den_daten;
       (* Annahme: es sind Resourcen vorhanden und sie sind am Ende.. *)
       d1_Seek(datenbasis+datenstart+ne.ne_rsrctab);
       d1_Read(rs_align,SizeOf(rs_align));
-      (* ne.ne_cres ist 0 also mu· geschummelt werden *)
+      (* ne.ne_cres ist 0 also mu√ü geschummelt werden *)
       while d1_GetPos+SizeOf(rs_type)<=datenbasis+datenstart+ne.ne_restab do
         begin
           d1_Read(rs_type,SizeOf(rs_type));
@@ -285,7 +285,7 @@ procedure springe_zu_den_daten;
       d1_Read(im,SizeOf(im));
       d1_Read(imo,SizeOf(imo));
 
-      (* Informationen Åber die erste Sektioen (.text) einlesen *)
+      (* Informationen √ºber die erste Sektioen (.text) einlesen *)
       d1_Seek(datenbasis+datenstart+4+SizeOf(im)+im.SizeOfOptionalHeader);
       d1_Read(sek,SizeOf(sek));
       setup_programmcode_laenge:=sek.Misc.VirtualSize;
@@ -294,7 +294,7 @@ procedure springe_zu_den_daten;
       d1_Read(sek,SizeOf(sek));
       setup_programmdaten_laenge:=sek.Misc.VirtualSize;
 
-      (* Informationen Åber letzte Sektion (Resource..) einlesen *)
+      (* Informationen √ºber letzte Sektion (Resource..) einlesen *)
       resource_sektion:=im.NumberOfSections-1;
       if (im.Characteristics and (1 shl 0))=0 then
         Dec(resource_sektion); (* relo *)
@@ -502,7 +502,7 @@ procedure verarbeite_patchformat;
       if  (dateilaenge>=16)
       and (anfang[0] in [1..150]) then
         begin
-          (* Patchkopf+vollstÑndige Datei *)
+          (* Patchkopf+vollst√§ndige Datei *)
           if  (Plongint(@anfang[9])^+anfang[0]*12+13=dateilaenge)
           and (Plongint(@anfang[$d])^=0) then
             begin
@@ -694,7 +694,7 @@ procedure lade_datenbank;
   end;
 
 begin
-  WriteLn(' E_WISE * WISE SETUP ',textz_Entpacker^,' * Veit Kannegieser * ',datum);
+  WriteLn('‚â° E_WISE * WISE SETUP ',textz_Entpacker^,' * Veit Kannegieser * ',datum);
 
   lade_datenbank;
 
@@ -858,7 +858,7 @@ begin
 
   (* Hauptschleife des Entpackens *)
   WriteLn(textz_Entpacke_Dateien^);
-  repeat (*€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€*)
+  repeat (*‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà*)
 
     rate_naechstes_blockende(d1_GetPos);
     Write(Int2Hex(d1_GetPos,8));
@@ -951,7 +951,7 @@ begin
     suche_informationsdatei;
     berechne_aktuelle_rechnugsnull;
 
-  until d1_GetPos>=archivende; (*€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€*)
+  until d1_GetPos>=archivende; (*‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà*)
 
   d1^.Done;
 
@@ -1144,8 +1144,8 @@ begin
 
   WriteLn(bat);
   WriteLn(bat,'REM');
-  (* auf Wechselbaren DatentrÑgern fragt OS/2
-    sonst nach dem DatentrÑger mit der BAT/CMD-Datei *)
+  (* auf Wechselbaren Datentr√§gern fragt OS/2
+    sonst nach dem Datentr√§ger mit der BAT/CMD-Datei *)
   (*WriteLn(bat,'IF [%1]==[] DEL %0');*)
   Close(bat);
   Close(log);
