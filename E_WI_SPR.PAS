@@ -6,11 +6,11 @@ interface
 
 implementation
 
-uses spr2_aus;
+{uses spr2_aus;}
 
 (*$I E_WI$$$$.001 *)
 
 begin
-  setze_sprachzeiger(@sprach_modul,@sprach_start);
+  {setze_sprachzeiger(@sprach_modul,@sprach_start);}
 end.
 

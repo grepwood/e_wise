@@ -694,6 +694,38 @@ procedure lade_datenbank;
   end;
 
 begin
+  textz_access_error := Pointer(NewStr('access error'));
+  textz_Cannot_expand_stream := Pointer(NewStr('Cannot initialize stream'));
+  textz_Read_beyond_end_of_stream := Pointer(NewStr('Read beyond end of stream'));
+  textz_Cannot_expand_stream := Pointer(NewStr('write error'));
+  textz_Entpacker := Pointer(NewStr('unpacker'));
+  textz_Zielverzeichnis := Pointer(NewStr('target directory'));
+  textz_Suche_Anfang := Pointer(NewStr('. searching start'));
+  textz_unbekanntes_WISE_Version_Autor_benachrichtigen := Pointer(NewStr('unknown WISE-version'));
+  textz_EXE_Typ := Pointer(NewStr('EXE type:'));
+  textz_EXE_Laenge := Pointer(NewStr(', EXE size: $'));
+  textz_dll_laenge := Pointer(NewStr(', size: $'));
+  textz_bitte_Pk_Un_zip_benutzen := Pointer(NewStr('please use (Pk)(Un)zip'));
+  textz_Entpacke_Dateien := Pointer(NewStr('. unpacking files'));
+  textz_Fehler_beim_Erstellen := Pointer(NewStr('error creating file'));
+  textz_Pruefsummenfehler := Pointer(NewStr('CRC error.'));
+  textz_Suche_Datei_mit_den_Installationsanweisungen := Pointer(NewStr('. looking for file with install instructions ..'));
+  textz_Datei_mit_den_Dateiinformationen_nicht_gefunden := Pointer(NewStr('install instructions not found.'));
+  textz_Erzeuge := Pointer(NewStr('. creating'));
+  textz_mit_den_gefundenen_Dateinamen := Pointer(NewStr(' with found filenames'));
+  textz_Quelle := Pointer(NewStr('source'));
+  textz_Dateiname := Pointer(NewStr('filename'));
+  textz_REM_Dateilaenge_wird_benutzt_bei := Pointer(NewStr('REM filesize is used at $'));
+  textz_benutztung := Pointer(NewStr('usage'));
+  textz_start_des_wise_setup_programmes := Pointer(NewStr('start of WISE-SETUP program in file: $'));
+  textz_codeseg_laenge := Pointer(NewStr(', size of codesegment: $'));
+  textz_lade_Datenbank_der_bekannten_Formate := Pointer(NewStr('. reading database of known formats'));
+  textz_Formatdatenbank__kann_nicht_geoeffnet_werden_1 := Pointer(NewStr('Can not open file "'));
+  textz_Formatdatenbank__kann_nicht_geoeffnet_werden_2 := Pointer(NewStr('".'));
+  textz_Zu_viele_Formatdefinitionen := Pointer(NewStr('Too many format definitions.'));
+  textz_keine_Eintraege_in_e_wise_cfg_gefunden := Pointer(NewStr('No entries in e_wise.cfg found.'));
+  textz_patchformat_vollstaendig := Pointer(NewStr('complete patch. removing header. '));
+  textz_patchformat_unvollstaendig := Pointer(NewStr('Patchfile, only contains differences.'));
   WriteLn('≡ E_WISE * WISE SETUP ',textz_Entpacker^,' * Veit Kannegieser * ',datum);
 
   lade_datenbank;
